@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainModel"
+            type="com.cloudcreativity.peoplepass_zy.main.MainModel" />
+    </data>
+
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/dwl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".main.MainActivity">
+        <!--main content-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tlb_main"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:elevation="3dip"
+                app:navigationIcon="@drawable/ic_format_list_bulleted_white_24dp"
+                app:titleTextColor="@android:color/white" />
+
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                android:id="@+id/refresh_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:tr_autoLoadMore="false"
+                app:tr_enable_loadmore="false"
+                app:tr_enable_refresh="true"
+                app:tr_head_height="50dip">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip"
+                        android:layout_weight="1.0">
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/banner_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:delay_time="3000" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/ic_guohui"/>
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dip"
+                                android:src="@mipmap/ic_main_title"/>
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip"
+                        android:orientation="vertical"
+                        android:layout_weight="1.7">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dip"
+                            android:layout_weight="0.5">
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dip"
+                            android:layout_weight="1">
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:background="?attr/selectableItemBackground"
+                                android:onClick="@{()->mainModel.onOrganizationClick()}"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/ic_jgjj"/>
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dip"
+                                    android:textColor="#4D4D4D"
+                                    android:textSize="16sp"
+                                    android:text="机构简介"/>
+                            </LinearLayout>
+                            <View android:layout_width="1dip" android:layout_height="wrap_content" android:background="@color/gray_f1f1f1"/>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:background="?attr/selectableItemBackground"
+                                android:onClick="@{()->mainModel.onPeopleClick()}"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/ic_mx"/>
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dip"
+                                    android:textColor="#4D4D4D"
+                                    android:textSize="16sp"
+                                    android:text="民行工作"/>
+                            </LinearLayout>
+                            <View android:layout_width="1dip" android:layout_height="wrap_content" android:background="@color/gray_f1f1f1"/>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:onClick="@{()->mainModel.onPublicClick()}"
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/ic_gyss"/>
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dip"
+                                    android:textColor="#4D4D4D"
+                                    android:textSize="16sp"
+                                    android:text="公益诉讼"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <View android:layout_width="match_parent" android:layout_height="1dip" android:background="@color/gray_f1f1f1"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dip"
+                            android:layout_weight="1">
+                            <LinearLayout
+                                android:onClick="@{()->mainModel.onLawClick()}"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/ic_fl"/>
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dip"
+                                    android:textColor="#4D4D4D"
+                                    android:textSize="16sp"
+                                    android:text="法律法规"/>
+                            </LinearLayout>
+                            <View android:layout_width="1dip" android:layout_height="wrap_content" android:background="@color/gray_f1f1f1"/>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{()->mainModel.onClassicCaseClick()}"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/ic_jdal"/>
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dip"
+                                    android:textColor="#4D4D4D"
+                                    android:textSize="16sp"
+                                    android:text="经典案例"/>
+                            </LinearLayout>
+                            <View android:layout_width="1dip" android:layout_height="wrap_content" android:background="@color/gray_f1f1f1"/>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:background="?attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:onClick="@{()->mainModel.onPassClick()}"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/ic_xsjb"/>
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dip"
+                                    android:textColor="#4D4D4D"
+                                    android:textSize="16sp"
+                                    android:text="随手拍"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dip"
+                            android:layout_weight="0.5">
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+        </LinearLayout>
+        <!--slide menu-->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nv_main"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/layout_main_drawerlayout_top"
+            app:itemTextColor="@color/gray_313131"
+            app:menu="@menu/menu" />
+
+    </android.support.v4.widget.DrawerLayout>
+</layout>
+
